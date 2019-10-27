@@ -1,4 +1,5 @@
 # MIPS Programming Project 1 
+# Aimie Ojuba - @02837763
 .data
 .text
 main:
