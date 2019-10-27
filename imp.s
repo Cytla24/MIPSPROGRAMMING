@@ -3,5 +3,5 @@
 .data
 .text
 main:
-		li $t0, 02837763
-		li $t1, 11
+		addi $t0, $zero, 02837763   # int $t0 = 02837763
+		addii $t1, $zero, 11		# int $t1 = 11
