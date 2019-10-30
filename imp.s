@@ -2,7 +2,8 @@
 # Aimie Ojuba - @02837763
 .data
 
-Ask_Input: .asciiz "Please Enter a String\n"
+	Ask_Input: .asciiz "Please Enter a String\n"
+	input: .space 10
 
 .text
 
@@ -23,6 +24,12 @@ main:
 	la $a0, Ask_Input
 	syscall
 	
+	#input string
+	li $v0, 8
+	la $a0, input
+	li $a1, 20
+	syscall
+
 	#End of Main
 	li $v0,10
 	syscall
