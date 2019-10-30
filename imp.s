@@ -30,6 +30,13 @@ main:
 	li $a1, 20
 	syscall
 
+	#instantiate index to 0
+	addi $t6, $zero, 0
+
+loop1:
+	beq $t6, 44, exit
+	j loop1
+
 	#End of Main
 	li $v0,10
 	syscall
