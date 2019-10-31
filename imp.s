@@ -51,8 +51,16 @@ loop1:
 	
 	and $s2, $s2, $s7
 
-
+	#Check if big  letter
+	li $t5, 64		
+	sgt $s3, $a0, $t5
 	
+	li $t5, 0
+	addi $t5, $s1, 65		# t5 = s1 + ord(A)
+	slt $s4, $a0, $t5
+	
+	and $s3, $s3, $s4
+
 	li $v0, 11
 	
 
