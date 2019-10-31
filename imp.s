@@ -109,10 +109,6 @@ small:
 	add $t4, $t4, $t2
 
 	li $v0, 11
-	#print index
-	li $v0, 1
-	addi $a0, $t6, 0
-	syscall
 
 increment:	
 	#increment index
