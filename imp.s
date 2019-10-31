@@ -76,8 +76,17 @@ loop1:
 	or $s2, $s2, $s5
 
 	li $v0, 11
-	
 
+	#if not valid, skip to next char
+	li $t8, 1
+	bne $s2, $t8, increment
+	
+	#print index
+	li $v0, 1
+	addi $a0, $t6, 0
+	syscall
+	
+increment:	
 	#increment index
 	addi $t6, $t6, 1
 	j loop1

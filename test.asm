@@ -72,11 +72,15 @@ loop1:
 	
 	li $v0, 11
 	
+	#call function to add val
+	li $t8, 1
+	bne $s2, $t8, increment
+	
 	#print index
 	li $v0, 1
 	addi $a0, $t6, 0
 	syscall
-	
+increment:	
 	#increment index
 	addi $t6, $t6, 1
 	j loop1
