@@ -98,7 +98,8 @@ letters:
 	sub $t2, $a0, $t9
 	addi $t2, $t2, 10
 	add $t4, $t4, $t2	
-	
+
+small:
 	#print index
 	li $v0, 1
 	addi $a0, $t6, 0
