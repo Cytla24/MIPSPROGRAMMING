@@ -86,11 +86,22 @@ loop1:
 	sub $t2, $a0, $t9
 	add $t4, $t4, $t2
 
-	
-
 letters:
 	#separate small letters from big letters
+	bne $s3, $t8, small
+	li $t2, 0			#temporary increment
+	li $t9, 65
+	sub $t2, $a0, $t9
+	addi $t2, $t2, 10
+	add $t4, $t4, $t2	
 	
+small:
+	li $t2, 0			#temporary increment
+	li $t9, 97
+	sub $t2, $a0, $t9
+	addi $t2, $t2, 10
+	add $t4, $t4, $t2
+
 	li $v0, 11
 	#print index
 	li $v0, 1
