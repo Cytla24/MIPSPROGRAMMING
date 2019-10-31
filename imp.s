@@ -43,7 +43,8 @@ loop1:
 	li $v0, 11
 	syscall
 
-	
+	#increment index
+	addi $t6, $t6, 1
 	j loop1
 
 	#End of Main
