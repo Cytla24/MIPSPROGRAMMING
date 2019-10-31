@@ -36,12 +36,18 @@ main:
 loop1:
 	beq $t6, 44, exit
 
-	#print each character
+	#get each character
 	la $a1, input
 	addu $a1, $a1, $t6
 	lb $a0, 0($a1)
+
+	#Check valididy of char
+	#Check if number
+	li $t5, 47		
+	sgt $s2, $a0, $t5
+
 	li $v0, 11
-	syscall
+	
 
 	#increment index
 	addi $t6, $t6, 1

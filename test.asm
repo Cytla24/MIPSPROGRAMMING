@@ -35,13 +35,42 @@ loop1:
 	la $a1, input
 	addu $a1, $a1, $t6
 	lb $a0, 0($a1)
-	li $v0, 11
-	syscall
 	
-	#print space
+	#Check valididy of char
+	#Check if number
+	li $t5, 47		
+	sgt $s2, $a0, $t5
+	
+	li $t5, 58
+	slt $s7, $a0, $t5
+	
+	and $s2, $s2, $s7
+		
+	#Check if big  letter
+	li $t5, 64		
+	sgt $s3, $a0, $t5
+	
+	li $t5, 0
+	addi $t5, $s1, 65		# t5 = s1 + ord(a)
+	slt $s4, $a0, $t5
+	
+	and $s3, $s3, $s4
+	
+	#check if small letter
+	li $t5, 96
+	sgt $s5, $a0, $t5
+	
+	li $t5, 0
+	addi $t5, $s1, 97
+	slt $s6, $a0, $t5
+	
+	and $s5, $s5, $s6
+	
+	#verify if any are true
+	or $s2, $s2, $s3
+	or $s2, $s2, $s5
+	
 	li $v0, 11
-	la $a0, nexx
-	syscall
 	
 	#print index
 	li $v0, 1
