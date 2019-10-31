@@ -26,6 +26,9 @@ main:
 	#instantiate index
 	addi $t6,$zero,0
 	
+	#declare total reg
+	li $t4, 0
+	
 	
 	
 loop1:
@@ -78,7 +81,11 @@ loop1:
 	
 	#separate numbers from other valid inputs
 	bne $s2, $t8, letters
-	li $t4, 0
+	li $t2, 0			#temporary increment
+	li $t9, 48
+	sub $t2, $a0, $t9
+	add $t4, $t4, $t2
+
 	
 
 letters:

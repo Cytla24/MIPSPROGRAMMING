@@ -87,6 +87,9 @@ loop1:
 	#separate numbers from other valid inputs
 	bne $s2, $t8, letters
 	li $t2, 0				#temporary increment
+	li $t9, 48
+	sub $t2, $a0, $t9
+	add $t4, $t4, $t2
 
 
 letters:
