@@ -70,7 +70,11 @@ loop1:
 	slt $s6, $a0, $t5
 	
 	and $s5, $s5, $s6
-	
+
+	#verify if any are true
+	or $s2, $s2, $s3
+	or $s2, $s2, $s5
+
 	li $v0, 11
 	
 
