@@ -47,6 +47,8 @@ loop1:
 	addi $t6, $t6, 1
 	j loop1
 
+exit:
+
 	#End of Main
 	li $v0,10
 	syscall
