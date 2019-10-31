@@ -33,6 +33,9 @@ main:
 	#instantiate index to 0
 	addi $t6, $zero, 0
 
+	#declare total reg
+	li $t4, 0
+
 loop1:
 	beq $t6, 44, exit
 
@@ -80,6 +83,13 @@ loop1:
 	#if not valid, skip to next char
 	li $t8, 1
 	bne $s7, $t8, increment
+
+	#separate numbers from other valid inputs
+	bne $s2, $t8, letters
+	li $t2, 0				#temporary increment
+
+
+letters:
 	
 	#print index
 	li $v0, 1

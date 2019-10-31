@@ -70,12 +70,21 @@ loop1:
 	or $s7, $s2, $s3
 	or $s7, $s7, $s5
 	
-	li $v0, 11
+	
 	
 	#if not valid, skip to next char
 	li $t8, 1
 	bne $s7, $t8, increment
 	
+	#separate numbers from other valid inputs
+	bne $s2, $t8, letters
+	li $t4, 0
+	
+
+letters:
+	#separate small letters from big letters
+	
+	li $v0, 11
 	#print index
 	li $v0, 1
 	addi $a0, $t6, 0
