@@ -67,14 +67,14 @@ loop1:
 	and $s5, $s5, $s6
 	
 	#verify if any are true
-	or $s2, $s2, $s3
-	or $s2, $s2, $s5
+	or $s7, $s2, $s3
+	or $s7, $s7, $s5
 	
 	li $v0, 11
 	
-	#call function to add val
+	#if not valid, skip to next char
 	li $t8, 1
-	bne $s2, $t8, increment
+	bne $s7, $t8, increment
 	
 	#print index
 	li $v0, 1
