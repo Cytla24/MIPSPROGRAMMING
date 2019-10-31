@@ -46,6 +46,13 @@ loop1:
 	li $t5, 47		
 	sgt $s2, $a0, $t5
 
+	li $t5, 58
+	slt $s7, $a0, $t5
+	
+	and $s2, $s2, $s7
+
+
+	
 	li $v0, 11
 	
 
