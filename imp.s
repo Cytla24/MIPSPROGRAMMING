@@ -100,6 +100,8 @@ letters:
 	add $t4, $t4, $t2	
 
 small:
+
+	li $v0, 11
 	#print index
 	li $v0, 1
 	addi $a0, $t6, 0
@@ -107,7 +109,6 @@ small:
 
 increment:	
 	#increment index
-	li $v0, 11
 	addi $t6, $t6, 1
 	j loop1
 
