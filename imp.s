@@ -88,6 +88,7 @@ loop1:
 	li $t9, 48
 	sub $t2, $a0, $t9
 	add $t4, $t4, $t2
+	j increment
 
 
 letters:
@@ -98,6 +99,7 @@ letters:
 	sub $t2, $a0, $t9
 	addi $t2, $t2, 10
 	add $t4, $t4, $t2	
+	j increment
 
 small:
 	li $t2, 0			#temporary increment
@@ -105,7 +107,7 @@ small:
 	sub $t2, $a0, $t9
 	addi $t2, $t2, 10
 	add $t4, $t4, $t2
-	
+
 	li $v0, 11
 	#print index
 	li $v0, 1
