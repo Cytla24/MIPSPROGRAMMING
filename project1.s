@@ -116,6 +116,11 @@ increment:
 	j loop1
 
 exit:
+	
+	#print total
+	li $v0, 1
+	addi $a0, $t4, 0
+	syscall
 
 	#End of Main
 	li $v0,10
