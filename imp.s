@@ -35,6 +35,15 @@ main:
 
 loop1:
 	beq $t6, 44, exit
+
+	#print each character
+	la $a1, input
+	addu $a1, $a1, $t6
+	lb $a0, 0($a1)
+	li $v0, 11
+	syscall
+
+	
 	j loop1
 
 	#End of Main

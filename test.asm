@@ -1,6 +1,7 @@
 .data
 	message:   .asciiz "\Please Enter a String\n"
 	input:     .space 10
+	nexx: 	    .asciiz " - "
 .text
 main:
 	addi $t0, $zero, 02837763  		# int $t0 = 02837763
@@ -21,6 +22,37 @@ main:
 	la $a0, input
 	li $a1, 20
 	syscall
+	
+	#instantiate index
+	addi $t6,$zero,0
+	
+	
+	
+loop1:
+	beq $t6, 11, exit
+	
+	#print each character
+	la $a1, input
+	addu $a1, $a1, $t6
+	lb $a0, 0($a1)
+	li $v0, 11
+	syscall
+	
+	#print space
+	li $v0, 11
+	la $a0, nexx
+	syscall
+	
+	#print index
+	li $v0, 1
+	addi $a0, $t6, 0
+	syscall
+	
+	#increment index
+	addi $t6, $t6, 1
+	j loop1
+
+exit:
 	
 	
 	#End of Main
