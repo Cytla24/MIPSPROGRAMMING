@@ -61,6 +61,16 @@ loop1:
 	
 	and $s3, $s3, $s4
 
+	#check if small letter
+	li $t5, 96
+	sgt $s5, $a0, $t5
+	
+	li $t5, 0
+	addi $t5, $s1, 97
+	slt $s6, $a0, $t5
+	
+	and $s5, $s5, $s6
+	
 	li $v0, 11
 	
 
